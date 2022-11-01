@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("Task #1");
         Animal cat = new Animal("felis");
         cat.name = "Mruczek";
 
@@ -15,10 +15,12 @@ public class Main {
             cat.takeForAWalk();
         }
 
-        /*Car porscheXXX = new Car("Porsche","XXX");
-        porscheXXX.course=152000;
-        porscheXXX.color="red";
+        System.out.println("\nTask #2");
+        Car auto = new Car("Volkswagen","Passat");
+        auto.course=152000;
+        auto.color="red";
+        person.autoOwner=auto;
 
-        System.out.println(porscheXXX);*/
+        System.out.println(person.autoOwner);
     }
 }
