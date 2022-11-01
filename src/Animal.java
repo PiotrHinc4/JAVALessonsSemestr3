@@ -6,7 +6,7 @@ public class Animal {
     final String specie;
     String name;
     Boolean isAlive;
-    Double weight;
+    private Double weight;
 
     Animal(String specie){
         this.specie = specie;
@@ -36,21 +36,21 @@ public class Animal {
     void feed(){
         if (this.isAlive == true){
             this.weight += 0.5;
-            System.out.println("dzięki za żarcie");
+            System.out.println(this.name + " thanks for food. He weighs " + this.weight + "kg now");
         } else {
-            System.out.println("Wszystko dobrze? Dobrze się czujesz?");
+            System.out.println("Are you sick? I call to the police!!!");
         }
     }
 
     void takeForAWalk(){
+        this.weight-=1;
+        if (this.weight<=0) {
+            this.isAlive = false;
+        }
         if (this.isAlive == true) {
-            this.weight -= 0.5;
-            System.out.println("Fajny spacer");
-            if (this.weight<=0) {
-                this.isAlive = false;
-            }
+            System.out.println("Nice walk. He weighs " + this.weight + "kg now");
         } else {
-            System.out.println("Dzwonię na policję!");
+            System.out.println("What are you doing?! He is dead!!!");
         }
     }
 }
