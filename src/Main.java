@@ -1,7 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        //Task #1
-        System.out.println("Task #1");
         Animal cat = new Animal("felis");
         cat.name = "Mruczek";
 
@@ -16,18 +14,18 @@ public class Main {
             cat.takeForAWalk();
         }
 
-        //Task #2
-        System.out.println("\nTask #2");
+        System.out.println("\n");
         Car auto = new Car("Volkswagen","Passat");
         auto.course=152000;
         auto.color="red";
-        person.autoOwner=auto;
+        auto.value=5000.0;
 
-        System.out.println(person.autoOwner);
+        System.out.println("\n");
+        person.getSalary();
+        person.setSalary(5230.12,"10.11.2022");
 
-        //Tasks #3-4
-        System.out.println("\nTasks #3-4");
-        person.getter();
-        person.setter(523.12,"10.11.2022");
+        System.out.println("\n");
+        person.getCar(auto);
+        person.setCar(auto.value,auto);
     }
 }
