@@ -15,6 +15,11 @@ public class Car {
         this.value=DEFAULT_CAR_VALUE;
     }
     public String toString() {
-        return "Producer: " + this.producer + "\nModel: " + this.model;
+        return "Vehicle technical data:" +
+                "\nProducer: " + producer +
+                "\nModel: " + model +
+                "\nColor: " + color +
+                "\nCourse: " + course +
+                "\nValue: " + value;
     }
 }

@@ -46,4 +46,7 @@ public class Human {
             System.out.println("Enroll in college and get a new job or go for a raise");
         }
     }
+    public String toString(){
+        return "My name is " + firstName + " " + lastName + ". Nice to meet you";
+    }
 }

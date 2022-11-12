@@ -53,4 +53,7 @@ public class Animal {
             System.out.println("What are you doing?! He is dead!!!");
         }
     }
+    public String toString() {
+        return "This is my pet " + name + ". He like you";
+    }
 }
