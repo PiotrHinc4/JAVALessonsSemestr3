@@ -1,14 +1,18 @@
+package creatures;
+
+import java.sql.SQLOutput;
+
 public class Animal {
     private static final Double DEFAULT_DOG_WEIGHT = 12.3;
     private static final Double DEFAULT_CAT_WEIGHT = 3.2;
     private static final Double DEFAULT_BEAR_WEIGHT = 480.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
-    final String specie;
-    String name;
-    Boolean isAlive;
+    public final String specie;
+    public String name;
+    public Boolean isAlive;
     private Double weight;
 
-    Animal(String specie){
+    public Animal(String specie){
         this.specie = specie;
         this.weight = weight;
 
@@ -33,7 +37,7 @@ public class Animal {
     }
 
 
-    void feed(){
+    public void feed(){
         if (this.isAlive == true){
             this.weight += 0.5;
             System.out.println(this.name + " thanks for food. He weighs " + this.weight + "kg now");
@@ -42,7 +46,7 @@ public class Animal {
         }
     }
 
-    void takeForAWalk(){
+    public void takeForAWalk(){
         this.weight-=1;
         if (this.weight<=0) {
             this.isAlive = false;
@@ -56,4 +60,5 @@ public class Animal {
     public String toString() {
         return "This is my pet " + name + ". He like you";
     }
+
 }

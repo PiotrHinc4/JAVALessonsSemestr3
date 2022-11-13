@@ -1,3 +1,5 @@
+import creatures.Animal;
+
 public class Main {
     public static void main(String[] args) {
         Human person = new Human();
@@ -16,17 +18,11 @@ public class Main {
         }
 
         System.out.println("\n");
-        Car auto1 = new Car("Volkswagen","Passat");
-        auto1.course=152000;
-        auto1.color="black";
-        auto1.value=5000.0;
+        Car auto1 = new Car("Volkswagen","Passat",5000.00,1992,"black");
         System.out.println("\nFirst car: ");
         person.getCar(auto1);
 
-        Car auto2 = new Car("Volkswagen","Passat");
-        auto2.course=15000;
-        auto2.color="red";
-        auto2.value=2000000.0;
+        Car auto2 = new Car("Ferrari","Y",2000000.00,2020,"red");
         System.out.println("\nSecond car: ");
         person.getCar(auto2);
 
@@ -37,5 +33,6 @@ public class Main {
         System.out.println("\n");
         //
         //person.setCar(auto.value,auto);
+        auto1.recharge(1);
     }
 }

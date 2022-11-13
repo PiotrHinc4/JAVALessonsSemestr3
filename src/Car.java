@@ -1,25 +1,25 @@
-public class Car {
-    static final Double DEFAULT_CAR_VALUE = 5000.00;
-    final String producer;
-    final String model;
+public class Car extends Device{
     Integer course;
     String color;
-    public Double value;
 
-    Car(String producer, String model){
-        this.producer = producer;
-        this.model = model;
-        this.course = course;
+    public Car(String producer, String model, Double value, Integer yearOfProduction, String color){
+        super(producer,model,value,yearOfProduction);
         this.color = color;
-        this.value = value;
-        this.value=DEFAULT_CAR_VALUE;
     }
     public String toString() {
-        return "Vehicle technical data:" +
-                "\nProducer: " + producer +
+        return  "\nProducer: " + producer +
                 "\nModel: " + model +
                 "\nColor: " + color +
-                "\nCourse: " + course +
                 "\nValue: " + value;
+    }
+
+    @Override
+    public void recharge(Integer percentage) {
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("naładowane");
     }
 }
