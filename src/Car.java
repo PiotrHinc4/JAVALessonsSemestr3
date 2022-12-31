@@ -7,7 +7,7 @@ public class Car extends Device{
         this.color = color;
     }
     public String toString() {
-        return  "\nProducer: " + producer +
+        return  "Producer: " + producer +
                 "\nModel: " + model +
                 "\nColor: " + color +
                 "\nValue: " + value;
