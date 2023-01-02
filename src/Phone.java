@@ -1,7 +1,7 @@
 public class Phone extends Device {
     Double resolution;
 
-    public Phone() {
+    public Phone(String producer, String model, Double value, Integer yearOfProduction) {
         super("Xiaomi","Redmi",1200.00,2021);
         this.resolution=resolution;
     }
@@ -18,5 +18,10 @@ public class Phone extends Device {
         System.out.println("Loading");
         System.out.println("Loading");
         System.out.println("Charged");
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Your phone is on");
     }
 }

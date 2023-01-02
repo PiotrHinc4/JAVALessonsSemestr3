@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Car extends Device{
     String color;
 
@@ -19,5 +21,10 @@ public class Car extends Device{
         System.out.println("Loading");
         System.out.println("Loading");
         System.out.println("Charged");
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Your car is on");
     }
 }

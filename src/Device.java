@@ -12,4 +12,5 @@ public abstract class Device {
         this.yearOfProduction = yearOfProduction;
     }
     public abstract void recharge(Integer percentage);
+    public abstract void turnOn();
 }

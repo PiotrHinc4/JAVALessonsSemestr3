@@ -17,14 +17,19 @@ public class Main {
             cat.takeForAWalk();
         }
 
-        System.out.println("\n");
+        System.out.println("\n1st car:");
         Car auto1 = new Car("Volkswagen","Passat",5000.00,1992,"black");
-        System.out.println("\nFirst car: ");
         person.getCar(auto1);
+        auto1.turnOn();
 
+        System.out.println("\n2nd car:");
         Car auto2 = new Car("Ferrari","Y",2000000.00,2020,"red");
-        System.out.println("\nSecond car: ");
         person.getCar(auto2);
+        auto2.turnOn();
+
+        System.out.println("\nPhone:");
+        Phone phone = new Phone("Xiaomi","Redmi",1200.00,2020);
+        phone.turnOn();
 
         System.out.println("\n");
         person.getSalary();
