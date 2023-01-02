@@ -1,16 +1,20 @@
 import creatures.Animal;
 
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Human:\n");
         Human person = new Human();
         person.firstName = "Jan";
         person.lastName = "Kowalski";
-        //Human toString
+        System.out.println(person);
 
+        System.out.println("\nAnimal:");
         Animal cat = new Animal("felis");
         person.pet = cat;
         cat.name = "Mruczek";
-        //Animal toString
+        System.out.println(cat);
 
         cat.feed();
         for(int index=3;index>=0;index--) {
@@ -24,11 +28,12 @@ public class Main {
 
         System.out.println("\n2nd car:");
         Car auto2 = new Car("Ferrari","Y",2000000.00,2020,"red");
-        person.getCar(auto2);
+        System.out.println(auto2);
         auto2.turnOn();
 
         System.out.println("\nPhone:");
         Phone phone = new Phone("Xiaomi","Redmi",1200.00,2020);
+        System.out.println(phone);
         phone.turnOn();
 
         System.out.println("\n");

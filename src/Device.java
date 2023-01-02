@@ -13,4 +13,5 @@ public abstract class Device {
     }
     public abstract void recharge(Integer percentage);
     public abstract void turnOn();
+    public abstract String toString();
 }
