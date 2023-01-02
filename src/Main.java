@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("\n");
         //
-        //person.setCar(auto.value,auto);
+        person.setCar(auto1.value,auto1);
         auto1.recharge(1);
     }
 }

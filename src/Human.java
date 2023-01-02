@@ -49,7 +49,7 @@ public class Human extends Animal {
         }
     }
     public void beEaten() throws Exception{
-        throw new Exception("Nie ma opcji");
+        throw new Exception("This is imposible");
     }
     public String toString(){
         return "My name is " + firstName + " " + lastName + ". Nice to meet you";

@@ -1,11 +1,9 @@
 public abstract class Device {
     static final Double DEFAULT_VALUE = 5000.00;
-    String producer;
-    //final (?)
-    String model;
-    //final (?)
+    final String producer;
+    final String model;
     public Double value;
-    public Integer yearOfProduction;
+    final public Integer yearOfProduction;
 
     public Device(String producer, String model, Double value, Integer yearOfProduction) {
         this.producer = producer;

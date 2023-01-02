@@ -9,7 +9,7 @@ public class FarmAnimal extends Animal implements Edible{
     public void beEaten() throws Exception {
         this.isAlive = false;
         this.setWeight(0.0);
-        System.out.println("MAM NADZIEJE, ŻE SMAKOWALO MORDERCO");
+        System.out.println("I hope you've had your fill, MORDERER");
     }
 
     @Override

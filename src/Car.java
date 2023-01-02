@@ -1,5 +1,4 @@
 public class Car extends Device{
-    Integer course;
     String color;
 
     public Car(String producer, String model, Double value, Integer yearOfProduction, String color){
@@ -15,11 +14,10 @@ public class Car extends Device{
 
     @Override
     public void recharge(Integer percentage) {
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("naładowane");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Charged");
     }
 }

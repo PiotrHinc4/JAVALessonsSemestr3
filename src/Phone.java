@@ -13,12 +13,10 @@ public class Phone extends Device {
 
     @Override
     public void recharge(Integer percentage) {
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("ładuje");
-        System.out.println("naładowane");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Loading");
+        System.out.println("Charged");
     }
-    //All from this class (toString)
 }
