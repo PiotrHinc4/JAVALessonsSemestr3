@@ -61,7 +61,6 @@ public class Animal {
         this.weight=newWeight;
     }
     public String toString() {
-        return "This is my pet " + name + ". He like you";
+        return "This is my pet " + name + ". He like you\n";
     }
-
 }

@@ -1,14 +1,15 @@
-import creatures.Animal;
+package creatures;
 
-public class Human extends Animal {
-    private static final String  DEFAULT_DATE_OF_LAST_SALARY="10.10.2022";
-    private static final double  DEFAULT_SALARY=123.45;
+public class Human<Car> extends Animal {
+    private static final String DEFAULT_DATE_OF_LAST_SALARY="10.10.2022";
+    private static final Double DEFAULT_SALARY=1234.56;
     public String firstName;
     public String lastName;
     public Animal pet;
     private Car autoOwner;
     private Double salary;
     public String dateSalary;
+    public Double cash;
 
     public Human() {
         super("homo sapiens");
@@ -18,9 +19,10 @@ public class Human extends Animal {
         this.dateSalary=dateSalary;
         this.dateSalary=DEFAULT_DATE_OF_LAST_SALARY;
         this.salary=DEFAULT_SALARY;
+        this.cash=cash;
     }
     public String getSalary() {
-        return "Date of last salary: " + this.dateSalary + "Your salary: " + this.salary;
+        return "Date of last salary: " + this.dateSalary + "\nYour salary: " + this.salary;
     }
     public void setSalary(Double salary, String dateSalary) {
         if(salary>0) {
@@ -50,6 +52,9 @@ public class Human extends Animal {
     }
     public void beEaten() throws Exception{
         throw new Exception("This is imposible");
+    }
+    interface sellable {
+        void sell(Human seller, Human buyer, Double price);
     }
     public String toString(){
         return "My name is " + firstName + " " + lastName + ". Nice to meet you";

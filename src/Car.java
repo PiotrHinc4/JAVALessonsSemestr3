@@ -1,6 +1,7 @@
 import java.sql.SQLOutput;
+import creatures.Human;
 
-public class Car extends Device{
+public class Car extends Device {
     String color;
 
     public Car(String producer, String model, Double value, Integer yearOfProduction, String color){
