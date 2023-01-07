@@ -1,3 +1,5 @@
+package rest;
+
 import java.sql.SQLOutput;
 import creatures.Human;
 
@@ -29,5 +31,22 @@ public class Car extends Device {
                 "\nModel: " + model +
                 "\nColor: " + color +
                 "\nValue: " + value;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.autoOwner != null) {
+            if (buyer.cash>price) {
+                buyer.cash-=price;
+                seller.cash+=price;
+                buyer.autoOwner=seller.autoOwner;
+                seller.autoOwner=null;
+                System.out.println(buyer.firstName + " " + buyer.lastName + " have a new car (and less money in the account)");
+            } else {
+                System.out.println("Buyer don't have enought cash to buy the car");
+            }
+        } else {
+            System.out.println("Seller don't have a car to sell");
+        }
     }
 }

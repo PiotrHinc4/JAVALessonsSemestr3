@@ -1,12 +1,13 @@
 package creatures;
 
-public class Human<Car> extends Animal {
+public class Human<Car> extends Animal{
     private static final String DEFAULT_DATE_OF_LAST_SALARY="10.10.2022";
     private static final Double DEFAULT_SALARY=1234.56;
     public String firstName;
     public String lastName;
     public Animal pet;
-    private Car autoOwner;
+    public Car autoOwner;
+    public rest.Phone phoneOwner;
     private Double salary;
     public String dateSalary;
     public Double cash;
@@ -52,9 +53,6 @@ public class Human<Car> extends Animal {
     }
     public void beEaten() throws Exception{
         throw new Exception("This is imposible");
-    }
-    interface sellable {
-        void sell(Human seller, Human buyer, Double price);
     }
     public String toString(){
         return "My name is " + firstName + " " + lastName + ". Nice to meet you";

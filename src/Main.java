@@ -1,5 +1,6 @@
 import creatures.Animal;
 import creatures.Human;
+import rest.Car;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class Main {
         Human person2 = new Human();
         person2.firstName = "Julia";
         person2.lastName = "Nowak";
-        person2.cash=6772.10;
+        person2.cash=123.45;
         System.out.println(person2);
 
         System.out.println("\nCat:");
@@ -30,7 +31,7 @@ public class Main {
 
         System.out.println("\nDog:");
         Animal dog = new Animal("canis");
-        person1.pet = dog;
+        person2.pet = dog;
         dog.name = "Ciapek";
         System.out.println(dog);
 
@@ -45,7 +46,8 @@ public class Main {
         auto2.turnOn();
 
         System.out.println("\nPhone:");
-        Phone phone = new Phone("Xiaomi","Redmi",1200.00,2020);
+        rest.Phone phone = new rest.Phone("Xiaomi","Redmi",1200.00,2020);
+        person2.phoneOwner=phone;
         System.out.println(phone);
         phone.turnOn();
 
@@ -56,5 +58,13 @@ public class Main {
         System.out.println("\n");
         person1.setCar(auto1.value,auto1);
         auto1.recharge(1);
+
+        System.out.println("\nTrades:");
+        cat.sell(person1,person2,150.00);
+        cat.sell(person1,person2,100.00);
+        person2.cash+=5000.00;
+        auto1.sell(person2,person1,5000.00);
+        auto1.sell(person1,person2,5000.00);
+        phone.sell(person2,person1,1000.00);
     }
 }

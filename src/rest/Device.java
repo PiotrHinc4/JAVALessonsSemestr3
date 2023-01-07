@@ -1,4 +1,8 @@
-public abstract class Device {
+package rest;
+
+import rest.sellable;
+
+public abstract class Device implements sellable {
     static final Double DEFAULT_VALUE = 5000.00;
     final String producer;
     final String model;
