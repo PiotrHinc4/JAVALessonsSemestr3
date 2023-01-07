@@ -1,5 +1,6 @@
 import creatures.Animal;
 import creatures.Human;
+import creatures.Pet;
 import rest.Car;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
         System.out.println(person2);
 
         System.out.println("\nCat:");
-        Animal cat = new Animal("felis");
+        Pet cat = new Pet("felis");
         person1.pet = cat;
         cat.name = "Mruczek";
         System.out.println(cat);
@@ -30,7 +31,7 @@ public class Main {
         }
 
         System.out.println("\nDog:");
-        Animal dog = new Animal("canis");
+        Pet dog = new Pet("canis");
         person2.pet = dog;
         dog.name = "Ciapek";
         System.out.println(dog);

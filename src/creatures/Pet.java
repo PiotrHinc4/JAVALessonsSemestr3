@@ -1,7 +1,7 @@
 package creatures;
 
 public class Pet extends Animal {
-    Pet(String specie) {
+    public Pet(String specie) {
         super(specie);
     }
 }

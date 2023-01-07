@@ -3,7 +3,7 @@ import rest.sellable;
 
 import java.sql.SQLOutput;
 
-public class Animal implements rest.sellable {
+public abstract class Animal implements rest.sellable {
     private static final Double DEFAULT_DOG_WEIGHT = 12.3;
     private static final Double DEFAULT_CAT_WEIGHT = 3.2;
     private static final Double DEFAULT_BEAR_WEIGHT = 480.0;
