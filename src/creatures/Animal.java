@@ -1,9 +1,10 @@
 package creatures;
 import rest.sellable;
+import creatures.Feedable;
 
 import java.sql.SQLOutput;
 
-public abstract class Animal implements rest.sellable {
+public abstract class Animal implements rest.sellable, creatures.Feedable {
     private static final Double DEFAULT_DOG_WEIGHT = 12.3;
     private static final Double DEFAULT_CAT_WEIGHT = 3.2;
     private static final Double DEFAULT_BEAR_WEIGHT = 480.0;
@@ -56,6 +57,9 @@ public abstract class Animal implements rest.sellable {
 
     public void setWeight(double newWeight) {
         this.weight = newWeight;
+    }
+    public double getWeight() {
+        return this.weight;
     }
 
     public String toString() {
