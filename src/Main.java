@@ -41,9 +41,6 @@ public class Main {
         dog.name = "Ciapek";
         System.out.println(dog);
 
-        dog.feed(1.5);
-        dog.feed(1.5);
-
         System.out.println("\n1st car:");
         Diesel auto1 = new Diesel("Volkswagen","Passat",5000.00,1992,"black");
         person1.getCar(auto1);
