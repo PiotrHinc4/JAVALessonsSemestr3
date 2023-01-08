@@ -1,9 +1,11 @@
 package rest;
-
 import creatures.Human;
 import rest.Device;
+import java.util.List;
 
 public class Phone extends Device {
+    private static final String DEFAULT_APP_SERVER = "8.8.8.8";
+    private static final String DEFAULT_APP_VERSION = "1.0";
     Double resolution;
 
     public Phone(String producer, String model, Double value, Integer yearOfProduction) {
@@ -43,6 +45,25 @@ public class Phone extends Device {
             }
         } else {
             System.out.println("Seller don't have a phone to sell");
+        }
+    }
+    public void installAnApp(String appName,String appVersion,String appServer){
+        System.out.println("Checking disk space");
+        System.out.println("Parental control check");
+        System.out.println("Checking payments");
+        System.out.println("App download");
+        System.out.println("Installing the application");
+        System.out.println("Installed " + appName + " " + appVersion + " from " + appServer+"\n");
+    }
+    public void installAnApp(String appName,String appVersion){
+        installAnApp(appName,appVersion,DEFAULT_APP_SERVER);
+    }
+    public void installAnApp(String appName){
+        installAnApp(appName,DEFAULT_APP_VERSION);
+    }
+    public void installAnApp(List<String> appNames) {
+        for(String appName:appNames){
+            this.installAnApp(appName);
         }
     }
 }

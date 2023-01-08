@@ -2,6 +2,8 @@ import creatures.Animal;
 import creatures.Human;
 import creatures.Pet;
 import rest.Car;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -70,5 +72,18 @@ public class Main {
         auto1.sell(person2,person1,5000.00);
         auto1.sell(person1,person2,5000.00);
         phone.sell(person2,person1,1000.00);
+
+
+        System.out.println("\n\nApp installation:");
+
+        List<String> appNames=new ArrayList<>();
+        appNames.add("FB");
+        appNames.add("Mess");
+        appNames.add("Whatsapp");
+
+        phone.installAnApp("Bank","3.2","192.168.0.1");
+        phone.installAnApp("Snapchat","5.0");
+        phone.installAnApp("Snake");
+        phone.installAnApp(appNames);
     }
 }
