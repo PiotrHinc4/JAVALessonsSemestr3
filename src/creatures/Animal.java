@@ -9,6 +9,7 @@ public abstract class Animal implements rest.sellable, creatures.Feedable {
     private static final Double DEFAULT_CAT_WEIGHT = 3.2;
     private static final Double DEFAULT_BEAR_WEIGHT = 480.0;
     private static final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
+    private static final double DEFAULT_FOOD_WEIGHT = 0.5;
     public final String specie;
     public String name;
     public Boolean isAlive;
@@ -39,12 +40,7 @@ public abstract class Animal implements rest.sellable, creatures.Feedable {
     }
 
     public void feed() {
-        if (this.isAlive == true) {
-            this.weight += 0.5;
-            System.out.println(this.name + " thanks for food. He weighs " + this.weight + "kg now");
-        } else {
-            System.out.println("Are you sick? I call to the police!!!");
-        }
+        feed(DEFAULT_FOOD_WEIGHT);
     }
 
     public void takeForAWalk() {
