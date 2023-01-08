@@ -2,6 +2,9 @@ import creatures.Animal;
 import creatures.Human;
 import creatures.Pet;
 import rest.Car;
+import rest.Diesel;
+import rest.Electric;
+import rest.LPG;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,14 +45,16 @@ public class Main {
         dog.feed(1.5);
 
         System.out.println("\n1st car:");
-        Car auto1 = new Car("Volkswagen","Passat",5000.00,1992,"black");
+        Diesel auto1 = new Diesel("Volkswagen","Passat",5000.00,1992,"black");
         person1.getCar(auto1);
         auto1.turnOn();
+        auto1.refuel();
 
         System.out.println("\n2nd car:");
-        Car auto2 = new Car("Ferrari","Y",2000000.00,2020,"red");
+        Electric auto2 = new Electric("Ferrari","Y",2000000.00,2020,"red");
         System.out.println(auto2);
         auto2.turnOn();
+        auto2.refuel();
 
         System.out.println("\nPhone:");
         rest.Phone phone = new rest.Phone("Xiaomi","Redmi",1200.00,2020);

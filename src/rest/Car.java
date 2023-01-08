@@ -3,7 +3,7 @@ package rest;
 import java.sql.SQLOutput;
 import creatures.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     String color;
 
     public Car(String producer, String model, Double value, Integer yearOfProduction, String color){
@@ -49,4 +49,5 @@ public class Car extends Device {
             System.out.println("Seller don't have a car to sell");
         }
     }
+    abstract void refuel();
 }
