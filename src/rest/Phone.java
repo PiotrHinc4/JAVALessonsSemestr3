@@ -4,8 +4,8 @@ import rest.Device;
 import java.util.List;
 
 public class Phone extends Device {
-    private static final String DEFAULT_APP_SERVER = "8.8.8.8";
-    private static final String DEFAULT_APP_VERSION = "1.0";
+    private static final String DEFAULT_APPLICATION_SERVER = "https://play.google.com";
+    private static final String DEFAULT_APPLICATION_VERSION = "last-stable";
     Double resolution;
 
     public Phone(String producer, String model, Double value, Integer yearOfProduction) {
@@ -48,18 +48,15 @@ public class Phone extends Device {
         }
     }
     public void installAnApp(String appName,String appVersion,String appServer){
-        System.out.println("Checking disk space");
-        System.out.println("Parental control check");
-        System.out.println("Checking payments");
-        System.out.println("App download");
-        System.out.println("Installing the application");
-        System.out.println("Installed " + appName + " " + appVersion + " from " + appServer+"\n");
+        System.out.println("Checking disk space. Parental control check. Checking payments");
+        System.out.println("App download and installing");
+        System.out.println("Installed " + appName + " (Version: " + appVersion + " Server: " + appServer+")\n");
     }
     public void installAnApp(String appName,String appVersion){
-        installAnApp(appName,appVersion,DEFAULT_APP_SERVER);
+        installAnApp(appName,appVersion,DEFAULT_APPLICATION_SERVER);
     }
     public void installAnApp(String appName){
-        installAnApp(appName,DEFAULT_APP_VERSION);
+        installAnApp(appName,DEFAULT_APPLICATION_VERSION);
     }
     public void installAnApp(List<String> appNames) {
         for(String appName:appNames){

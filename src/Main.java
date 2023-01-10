@@ -80,15 +80,12 @@ public class Main {
 
 
         System.out.println("\n\nApp installation:");
-
-        List<String> appNames=new ArrayList<>();
-        appNames.add("FB");
-        appNames.add("Mess");
-        appNames.add("Whatsapp");
-
-        phone.installAnApp("Bank","3.2","192.168.0.1");
-        phone.installAnApp("Snapchat","5.0");
+        List<String> appList=new ArrayList<>();
+        appList.add("Messenger");
+        appList.add("Whatsapp");
+        phone.installAnApp("Bank","1.0","https://www.microsoft.com/pl-pl/store/apps/");
+        phone.installAnApp("Snapchat","5.2");
         phone.installAnApp("Snake");
-        phone.installAnApp(appNames);
+        phone.installAnApp(appList);
     }
 }
