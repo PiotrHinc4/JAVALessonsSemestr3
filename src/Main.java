@@ -130,5 +130,11 @@ public class Main {
         for(int i=0;i<100;i++){
             System.out.println(tab4[i]);
         }
+
+        System.out.println("\nTask 5 from presentation:");
+        char[] tab5 = new char[26];
+        for(char i=97;i<97+26;i++){
+            System.out.println(i);
+        }
     }
 }
