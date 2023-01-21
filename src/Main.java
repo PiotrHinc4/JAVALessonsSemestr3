@@ -87,5 +87,48 @@ public class Main {
         phone.installAnApp("Snapchat","5.2");
         phone.installAnApp("Snake");
         phone.installAnApp(appList);
+
+        System.out.println("Task 1 from presentation:");
+        int[] tab1 = new int[10];
+        for(int i=0;i<10;i++){
+            tab1[i]=i+101;
+        }
+        for(int i=0;i<10;i++){
+            System.out.println(tab1[i]);
+        }
+
+        System.out.println("\nTask 2 from presentation:");
+        int[] tab2 = new int[10];
+        for(int i=0;i<10;i++) {
+            tab2[i] = (i+1)*10;
+        }
+
+        for(int i=0;i<10;i++){
+            System.out.println(tab2[i]);
+        }
+
+        System.out.println("\nTask 3 from presentation:");
+        boolean[] tab3 = new boolean[20];
+        for(int i=0;i<20;i++){
+            if(i%2==0) {
+                tab3[i]=true;
+            } else {
+                tab3[i]=false;
+            }
+        }
+
+        for (int i=0;i<20;i++){
+            System.out.println(tab3[i]);
+        }
+
+        System.out.println("\nTask 4 from presentation:");
+        int[] tab4 = new int[100];
+        for(int i=0;i<100;i++){
+            tab4[i]=i%10;
+        }
+
+        for(int i=0;i<100;i++){
+            System.out.println(tab4[i]);
+        }
     }
 }
