@@ -1,19 +1,26 @@
 package creatures;
+import rest.*;
 
-public class Human<Car> extends Animal{
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class Human extends Animal{
     private static final String DEFAULT_DATE_OF_LAST_SALARY="10.10.2022";
     private static final Double DEFAULT_SALARY=1234.56;
+    private static final int DEFAULT_GARAGE_SIZE = 3;
+    private static final String SPECIES_OF_HUMAN = "Homo sapiens";
     public String firstName;
     public String lastName;
     public Animal pet;
-    public Car autoOwner;
+    public Car[] garage;
+    public Car car;
     public rest.Phone phoneOwner;
     private Double salary;
     public String dateSalary;
     public Double cash;
 
     public Human() {
-        super("homo sapiens");
+        super(SPECIES_OF_HUMAN);
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary=salary;
@@ -21,6 +28,12 @@ public class Human<Car> extends Animal{
         this.dateSalary=DEFAULT_DATE_OF_LAST_SALARY;
         this.salary=DEFAULT_SALARY;
         this.cash=cash;
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
+    }
+    public Human(Integer garageSize){
+        super(SPECIES_OF_HUMAN);
+        salary=DEFAULT_SALARY;
+        this.garage = new Car[garageSize];
     }
     public String getSalary() {
         return "Date of last salary: " + this.dateSalary + "\nYour salary: " + this.salary;
@@ -37,19 +50,44 @@ public class Human<Car> extends Animal{
             System.out.println("Salary must be greater than 0");
         }
     }
-    public void getCar(Car auto) {
-        System.out.println(auto);
+    public Car getCar(Car auto,Integer parkingLotNumber) {
+        //walidacja
+        return this.garage[parkingLotNumber];
     }
-    public void setCar(double value, Car auto) {
-        if (this.salary>value) {
-            System.out.println("You bought a car for cash. Nice job ;)");
-            autoOwner=auto;
-        } else if (this.salary>value/12) {
-            System.out.println("A car was purchased, but a loan was also obtained");
-            autoOwner=auto;
-        } else {
-            System.out.println("Enroll in college and get a new job or go for a raise");
+    public void setCar(double value, Car auto, Integer parkingLotNumber) {
+        if (this.salary>value) {if (car.value < this.salary)
+        {
+            System.out.println("Successful purchase , payment method: cash");
+            if (parkingLotNumber >= garage.length)
+            {
+                System.out.println("sorry, ale mam za mały garaż");
+            }
+            else if (parkingLotNumber < 0) System.out.println("Ogarnij się");
+            else if (this.garage[parkingLotNumber] != null) System.out.println("sorry, miejsce zajęte");
+            else this.garage[parkingLotNumber] = car;
         }
+        else if (this.salary > car.value / 12)
+        {
+            System.out.println("Successful purchase, payment method: credit");
+            if (parkingLotNumber >= garage.length)
+            {
+                System.out.println("sorry, ale mam za mały garaż");
+            }
+            else if (parkingLotNumber < 0) System.out.println("Ogarnij się");
+            else if (this.garage[parkingLotNumber] != null) System.out.println("sorry, miejsce zajęte");
+            else this.garage[parkingLotNumber] = car;
+        } else {
+            System.out.println("Do something with your life because you cant afford this car :(");
+        }
+        }
+    }
+    public Double getValueOfAllCars() {
+        //sumowanie wartości wszystkich samochodów w pętli
+        return null;
+    }
+    public void sortCarsByValue(){
+        CarByValueComparator comparator = new CarByValueComparator();
+        Arrays.sort(this.garage,comparator);
     }
     public void beEaten() throws Exception{
         throw new Exception("This is imposible");
@@ -66,5 +104,15 @@ public class Human<Car> extends Animal{
         } else {
             System.out.println("Are you sick? I call to the police!!!");
         }
+    }
+
+    public boolean hasACar(Car car) {
+        boolean hasACar=false;
+        for(int i=0;i<this.garage.length;i++){
+            if(car.equals(this.garage[i])){
+                hasACar=true;
+            }
+        }
+        return hasACar;
     }
 }

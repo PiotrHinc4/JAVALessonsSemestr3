@@ -1,9 +1,10 @@
 package rest;
 
 import java.sql.SQLOutput;
-import creatures.Human;
+import creatures.*;
+import rest.*;
 
-public abstract class Car extends Device {
+public abstract class Car extends Device implements Comparable<Car>,sellable{
     String color;
 
     public Car(String producer, String model, Double value, Integer yearOfProduction, String color){
@@ -34,8 +35,26 @@ public abstract class Car extends Device {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        if (seller.autoOwner != null) {
+    public void sell(Human seller, Human buyer, Double price) throws Exception{
+        if(!seller.hasACar(this)){
+            //wyjątek
+            throw new Exception("Sprzedawca nie ma samochodu");
+        }
+        if (!buyer.canHaveMoreCars()) {
+            //wyjątek
+            throw new Exception("Kupujący nie ma miejsca na auto");
+        }
+        if (buyer.hasLessMoneyThen(price)){
+            //wyjątek
+            throw new Exception("Kupujący nie ma dość pieniędzy");
+        }
+        seller.removeCar(this);
+        buyer.addCar(this);
+        seller.addMoney(price);
+        buyer.collectMoney(price);
+        System.out.println("Transakcja powiodła się");
+    }
+        /*if (seller.autoOwner != null) {
             if (buyer.cash>price) {
                 buyer.cash-=price;
                 seller.cash+=price;
@@ -48,6 +67,11 @@ public abstract class Car extends Device {
         } else {
             System.out.println("Seller don't have a car to sell");
         }
-    }
+    }*/
     abstract void refuel();
+
+    @Override
+    public int compareTo(Car otherCar) {
+        return this.value.compareTo(otherCar.value);
+    }
 }

@@ -6,12 +6,13 @@ import rest.Diesel;
 import rest.Electric;
 import rest.LPG;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("1st Person:");
-        Human person1 = new Human();
+        Human person1 = new Human(3);
         person1.firstName = "Jan";
         person1.lastName = "Kowalski";
         person1.cash=3451.78;
@@ -46,7 +47,7 @@ public class Main {
 
         System.out.println("\n1st car:");
         Diesel auto1 = new Diesel("Volkswagen","Passat",5000.00,1992,"black");
-        person1.getCar(auto1);
+        person1.getCar(auto1,3);
         auto1.turnOn();
         auto1.refuel();
 
@@ -67,7 +68,7 @@ public class Main {
         person1.setSalary(5230.12,"10.11.2022");
 
         System.out.println("\n");
-        person1.setCar(auto1.value,auto1);
+        person1.setCar(auto1.value,auto1,3);
         auto1.recharge(1);
 
         System.out.println("\nTrades:");
@@ -88,6 +89,25 @@ public class Main {
         phone.installAnApp("Snake");
         phone.installAnApp(appList);
 
+        person1.getCar(auto1,1);
+        person1.getCar(auto2,2);
+        person1.getValueOfAllCars();
 
+        Car[] cars = new Car[3];
+        cars[0] = new Electric("Tesla","T",130000.0,2022,"red");
+        cars[1] = new Diesel("Ford", "Focus",20000.0, 2015,"white");
+        cars[2] = new LPG("Fiat", "Bravo",15000.0,2005,"grey");
+
+        Arrays.sort(cars);
+
+        for (Car car: cars){
+            System.out.println(car);
+        }
+
+        Car Tesla = new Electric("Tesla","T",130000.0,2022,"red");
+        Car Ford = new Diesel("Ford", "Focus",20000.0, 2015,"white");
+        Car Fiat = new LPG("Fiat", "Bravo",15000.0,2005,"grey");
+        //person1.setCar(Tesla,0,3);
+        //person1.setCar(Ford,1,3);
     }
 }
