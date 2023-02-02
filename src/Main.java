@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("1st Person:");
         Human person1 = new Human(3);
         person1.firstName = "Jan";
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("\n1st car:");
         Diesel auto1 = new Diesel("Volkswagen","Passat",5000.00,1992,"black");
-        person1.getCar(auto1,3);
+        person1.getCar(auto1,1);
         auto1.turnOn();
         auto1.refuel();
 

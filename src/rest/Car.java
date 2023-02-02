@@ -37,22 +37,19 @@ public abstract class Car extends Device implements Comparable<Car>,sellable{
     @Override
     public void sell(Human seller, Human buyer, Double price) throws Exception{
         if(!seller.hasACar(this)){
-            //wyjątek
-            throw new Exception("Sprzedawca nie ma samochodu");
+            throw new Exception("Seller don't  have a car");
         }
         if (!buyer.canHaveMoreCars()) {
-            //wyjątek
-            throw new Exception("Kupujący nie ma miejsca na auto");
+            throw new Exception("Buyer don't have a free place in garage");
         }
         if (buyer.hasLessMoneyThen(price)){
-            //wyjątek
-            throw new Exception("Kupujący nie ma dość pieniędzy");
+            throw new Exception("Buyer don't have enought money");
         }
         seller.removeCar(this);
         buyer.addCar(this);
         seller.addMoney(price);
         buyer.collectMoney(price);
-        System.out.println("Transakcja powiodła się");
+        System.out.println("The transaction was successful");
     }
         /*if (seller.autoOwner != null) {
             if (buyer.cash>price) {

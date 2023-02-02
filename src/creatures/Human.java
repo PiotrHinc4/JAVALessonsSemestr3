@@ -115,4 +115,58 @@ public class Human extends Animal{
         }
         return hasACar;
     }
+
+    public boolean canHaveMoreCars() {
+        int sum=0;
+        for(int i=0;i<this.garage.length;i++){
+            if(car.equals(this.garage[i])){
+                sum++;
+            }
+        }
+        if (sum<DEFAULT_GARAGE_SIZE){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean hasLessMoneyThen(Double price) {
+        if (price<cash) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void removeCar(Car car) {
+        boolean carRemovedFromGarage = false;
+        for(int i=0;i<=DEFAULT_GARAGE_SIZE;i++){
+            if (carRemovedFromGarage==false) {
+                if (this.garage[i] == car) {
+                    this.garage[i] = null;
+                    carRemovedFromGarage=true;
+                }
+            }
+        }
+    }
+
+    public void addCar(Car car) {
+        boolean carAddedToGarage = false;
+        for(int i=0;i<=DEFAULT_GARAGE_SIZE;i++){
+            if (carAddedToGarage==false) {
+                if (this.garage[i] != null) {
+                    this.garage[i] = car;
+                    carAddedToGarage=true;
+                }
+            }
+        }
+    }
+
+    public void addMoney(Double price) {
+        this.cash=+price;
+    }
+
+    public void collectMoney(Double price) {
+        this.cash=-price;
+    }
 }
